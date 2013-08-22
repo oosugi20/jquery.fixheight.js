@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>jquery.fixheight.js Sample</title>
+<script src="../lib/jquery-1.10.2.js"></script>
+<script src="../jquery.fixheight.js"></script>
+</head>
+
+<body>
+<style>
+p {
+	margin: 0;
+	padding: 0;
+}
+.demo1 {
+	margin: 0;
+	padding: 0;
+	zoom: 1;
+}
+.demo1:after {
+	content: "."; display: block; clear: both; height: 0; visibility: hidden; font-size: 0;
+}
+.demo1-unit {
+	float: left;
+	margin: 10px;
+	padding: 10px;
+	width: 200px;
+	background: #FFC;
+}
+</style>
+<div class="demo1">
+<div class="demo1-unit">
+<div class="demo1-unitbody">
+<p class="demo1-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+</div>
+<div class="demo1-unit">
+<div class="demo1-unitbody">
+<p class="demo1-p">The quick brown fox jumps over the lazy dog.</p>
+</div>
+</div>
+</div>
+<script>$('.demo1').fixheight({ unitSelector: '.demo1-unit', targetSelector: '.demo1-unitbody' });</script>
+
+
+
+<style>
+.demo2 {
+	margin: 0;
+	padding: 0;
+	zoom: 1;
+}
+.demo2:after {
+	content: "."; display: block; clear: both; height: 0; visibility: hidden; font-size: 0;
+}
+.demo2-unit {
+	float: left;
+	margin: 10px;
+	padding: 10px;
+	width: 200px;
+	background: #FFC;
+}
+.demo2-unithead {
+	margin: 0 0 10px;
+	padding: 10px;
+	background: #FCC;
+}
+.demo2-unitbody {
+	padding: 10px;
+	background: #C99;
+}
+.demo2-unith {
+	background: #EEE;
+}
+.demo2-p {
+	margin: 10px 0;
+	background: #999;
+}
+</style>
+<div class="demo2">
+<div class="demo2-unit">
+<div class="demo2-unithead">
+<h3 class="demo2-unith">The quick brown.</h3>
+</div>
+<div class="demo2-unitbody">
+<p class="demo2-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p class="demo2-p">The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.</p>
+</div>
+</div>
+<div class="demo2-unit">
+<div class="demo2-unithead">
+<h3 class="demo2-unith">The quick brown fox jumps over the lazy dog.</h3>
+</div>
+<div class="demo2-unitbody">
+<p class="demo2-p">The quick brown fox jumps over the lazy dog.</p>
+<p class="demo2-p">The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.</p>
+</div>
+</div>
+</div>
+<script>$('.demo2').fixheight({ unitSelector: '.demo2-unit', targetSelector: '.demo2-unithead' });</script>
+<script>$('.demo2').fixheight({ unitSelector: '.demo2-unit', targetSelector: '.demo2-unitbody' });</script>
+
+
+<style>
+.demo3 {
+	width: 960px; /* 親要素の幅を指定しなければズレる可能性あり */
+	zoom: 1;
+}
+.demo3:after {
+	content: "."; display: block; clear: both; height: 0; visibility: hidden; font-size: 0;
+}
+.demo3-unit {
+	float: left;
+	width: 200px;
+	margin: 10px;
+	padding: 10px;
+	background: #FCC;
+}
+.demo3-item {
+	margin: 10px 0;
+	padding: 10px;
+	list-style: none;
+	background: #E99;
+}
+</style>
+<div class="demo3">
+<div class="demo3-unit">
+<div class="demo3-item">
+<p>The quick brown fox jumps over the lazy dog.</p>
+</div>
+<div class="demo3-item">
+<p>The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.</p>
+</div>
+<div class="demo3-item">
+<p>The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.</p>
+</div>
+</div>
+<div class="demo3-unit">
+<div class="demo3-item">
+<p>The quick brown fox jumps over the lazy dog.</p>
+</div>
+<div class="demo3-item">
+<p>The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.</p>
+</div>
+<div class="demo3-item">
+<p>The quick brown fox jumps over the lazy dog.</p>
+</div>
+</div>
+<div class="demo3-unit">
+<div class="demo3-item">
+<p>The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.</p>
+</div>
+<div class="demo3-item">
+<p>The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.</p>
+</div>
+<div class="demo3-item">
+<p>The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.</p>
+</div>
+</div>
+<div class="demo3-unit">
+<div class="demo3-item">
+<p>The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.</p>
+</div>
+<div class="demo3-item">
+<p>The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.</p>
+</div>
+<div class="demo3-item">
+<p>The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.</p>
+</div>
+</div>
+</div>
+<script>$('.demo3').fixheight({ unitSelector: '.demo3-item', targetSelector: 'p', isParentDivided: true });</script>
+</body>
+</html>
